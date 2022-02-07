@@ -28,4 +28,4 @@ st.write(f'Selected option: `{hello}`')
 A = [[1, -1], [-1, 1]]
 B = [[-1, 1], [1, -1]]
 matching_pennies = nash.Game(A, B)
-matching_pennies
+st.write(matching_pennies)
