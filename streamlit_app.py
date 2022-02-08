@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-import nashpy as nash
+# import nashpy as nash
 from gsheetsdb import connect
 import numpy as np
 
@@ -56,10 +56,13 @@ prices = []
 for row in rows:
   dates.append(row.Date)
   prices.append(row.Close)
+st.write('dates',dates)
+st.write('prices',prices)
 
-df_data = pd.DataFrame(data = [dates,prices], columns = ['Date,Close'])
+# https://www.kite.com/python/answers/how-to-create-pandas-dataframe-from-a-numpy-array-in-python
+df_data = pd.DataFrame({'dates':np.array(dates),'prices':np.array(prices)})
 
-df_data.head()
+st.write(df_data.head())
 
 time = np.array(dates)
 series = np.array(prices)
@@ -68,7 +71,7 @@ st.write(f'Selected option: `{tic_option}`')
 
 
 
-A = [[1, -1], [-1, 1]]
-B = [[-1, 1], [1, -1]]
-matching_pennies = nash.Game(A, B)
-st.write(f'```{matching_pennies}```')
+# A = [[1, -1], [-1, 1]]
+# B = [[-1, 1], [1, -1]]
+# matching_pennies = nash.Game(A, B)
+# st.write(f'```{matching_pennies}```')
