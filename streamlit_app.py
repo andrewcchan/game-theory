@@ -57,7 +57,7 @@ for row in rows:
   dates.append(row.Date)
   prices.append(row.Close)
 
-df_data = pd.Dataframe(data = [dates,prices], columns = ['Date,Close'])
+df_data = pd.DataFrame(data = [dates,prices], columns = ['Date,Close'])
 
 df_data.head()
 
