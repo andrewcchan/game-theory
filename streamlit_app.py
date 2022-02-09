@@ -62,7 +62,7 @@ st.write('prices',prices)
 # https://www.kite.com/python/answers/how-to-create-pandas-dataframe-from-a-numpy-array-in-python
 df_data = pd.DataFrame({'dates':np.array(dates),'prices':np.array(prices)})
 
-st.write(df_data.head())
+st.write(df_data.iloc[-10])
 
 time = np.array(dates)
 series = np.array(prices)
